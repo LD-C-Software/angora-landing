@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angora</title>
+  <meta name="description" content="Angora is a self-hosted CRM/support system with a modern full-stack architecture." />
+  <link rel="icon" type="image/png" href="assets/icon-minimal.png" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+
+  <style>
+    :root {
+      --pico-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --pico-primary: #1868f0;
+      --pico-primary-hover: #3f84ff;
+      --pico-primary-background: #1868f0;
+      --pico-primary-hover-background: #3f84ff;
+      --pico-primary-underline: #1868f0;
+      --pico-primary-focus: rgba(24, 104, 240, 0.5);
+      --pico-background-color: #081030;
+      --pico-color: #f8f8f8;
+      --pico-h1-color: #f8f8f8;
+      --pico-muted-color: #b0b0b8;
+      --pico-muted-border-color: #182850;
+      --pico-card-background-color: #0d1740;
+      --pico-card-border-color: #182850;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    main.container {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+      padding-inline: 1.25rem;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      width: clamp(160px, 30vw, 280px);
+      height: clamp(160px, 30vw, 280px);
+      max-width: 100%;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 3rem);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 3vw, 1.15rem);
+      color: var(--pico-muted-color);
+      margin-bottom: 2rem;
+    }
+
+    .gh-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: auto;
+      background-color: #f8f8f8;
+      border-color: #f8f8f8;
+      color: #081030;
+    }
+
+    .gh-button:is(:hover, :focus) {
+      background-color: #ffffff;
+      border-color: #ffffff;
+      color: #081030;
+    }
+
+    .gh-button svg {
+      width: 1.1em;
+      height: 1.1em;
+      fill: currentColor;
+    }
+
+    .contributors {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--pico-muted-border-color);
+    }
+
+    .contributors h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--pico-muted-color);
+      margin-bottom: 1rem;
+    }
+
+    .contributor-list {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contributor-list li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .contributor-name {
+      color: var(--pico-color);
+      font-weight: 600;
+    }
+
+    .contributor-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .contributor-links a {
+      color: var(--pico-muted-color);
+      display: inline-flex;
+    }
+
+    .contributor-links a:hover {
+      color: var(--pico-primary);
+    }
+
+    .contributor-links svg {
+      width: 1.25em;
+      height: 1.25em;
+      fill: currentColor;
+    }
+
+    /* Honeypot: present in the DOM for markup scrapers, invisible and
+       unreachable for real visitors and assistive tech. */
+    .trap {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: var(--pico-muted-color);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--pico-muted-color);
+    }
+
+    @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+      }
+
+      main.container {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .gh-button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .contributor-list {
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <img class="logo" src="assets/icon.png" alt="Angora logo" />
+    <h1>Angora</h1>
+    <p class="tagline">Self-hosted CRM/support system with a modern full-stack architecture.</p>
+
+    <a
+      class="gh-button"
+      role="button"
+      href="https://github.com/LD-C-Software/angora"
+      target="_blank"
+      rel="noopener"
+    >
+      <svg viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+      </svg>
+      View on GitHub
+    </a>
+
+    <section class="contributors">
+      <h2>Contributors</h2>
+      <ul class="contributor-list">
+        <li>
+          <span class="contributor-name">buraksal</span>
+          <span class="contributor-links">
+            <a href="https://github.com/buraksal" target="_blank" rel="noopener" aria-label="buraksal on GitHub">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+              </svg>
+            </a>
+            <a href="#" class="js-email" data-rev="duolc.arogna@karub" aria-label="Email buraksal">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5v7A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 3h-13Zm0 1h13a.5.5 0 0 1 .5.5v.217l-7 4.2-7-4.2V4.5a.5.5 0 0 1 .5-.5Zm-.5 1.717 6.734 4.04a.5.5 0 0 0 .532 0L15 5.717V11.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V5.717Z"/>
+              </svg>
+            </a>
+          </span>
+        </li>
+        <li>
+          <span class="contributor-name">chogster</span>
+          <span class="contributor-links">
+            <a href="https://github.com/chogster" target="_blank" rel="noopener" aria-label="chogster on GitHub">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+              </svg>
+            </a>
+            <a href="#" class="js-email" data-rev="duolc.arogna@utrab" aria-label="Email chogster">
+              <svg viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5v7A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 14.5 3h-13Zm0 1h13a.5.5 0 0 1 .5.5v.217l-7 4.2-7-4.2V4.5a.5.5 0 0 1 .5-.5Zm-.5 1.717 6.734 4.04a.5.5 0 0 0 .532 0L15 5.717V11.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V5.717Z"/>
+              </svg>
+            </a>
+          </span>
+        </li>
+      </ul>
+
+      <!-- Honeypot: real mailto: text lure for scrapers that read raw HTML
+           without honoring CSS/tabindex. Not linked from anywhere a human
+           would navigate. -->
+      <a href="mailto:webmaster@angora.cloud" class="trap" aria-hidden="true" tabindex="-1">webmaster@angora.cloud</a>
+    </section>
+
+    <footer>
+      <p>MIT Licensed &middot; <a href="https://angora.cloud" target="_blank" rel="noopener">angora.cloud</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelectorAll('a.js-email').forEach(function (link) {
+      var email = link.getAttribute('data-rev').split('').reverse().join('');
+      link.setAttribute('href', 'mailto:' + email);
+    });
+  </script>
+</body>
+</html>
